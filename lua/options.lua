@@ -2,6 +2,9 @@
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 
+-- <TAB> mapping option for Copilot. Source: https://github.com/orgs/community/discussions/52918
+vim.g.copilot_assume_mapped = true
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
