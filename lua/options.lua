@@ -20,6 +20,18 @@ vim.o.mouse = 'a'
 --  See `:help 'clipboard'`
 vim.o.clipboard = 'unnamedplus'
 
+-- Set shiftwidth to 4 spaces
+vim.o.shiftwidth = 4
+
+-- Set tabstop to 4 spaces
+vim.o.tabstop = 4
+
+-- Set softtabstop to 4 spaces 
+vim.o.softtabstop = 4
+
+-- Enable expandtab (use spaces instead of tabs)
+vim.o.expandtab = true
+
 -- Enable break indent
 vim.o.breakindent = true
 
