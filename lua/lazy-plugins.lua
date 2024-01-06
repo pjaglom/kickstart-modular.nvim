@@ -23,6 +23,11 @@ require('lazy').setup({
     end,
   },
 
+  -- The Primeagen's "Harpoon"
+  'theprimeagen/harpoon',
+
+  -- Undotree (recommendation from The Primeagen setup)
+  'mbbill/undotree',
 
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
