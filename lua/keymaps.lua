@@ -25,7 +25,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
--- [[ The Primeagen Recs ]]
+-- [[ The Primeagen Recs - https://github.com/ThePrimeagen/init.lua/ ]]
 -- Remap to open netrw file tree
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
@@ -41,8 +41,8 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- keep cursor in middle of screen when searching for text
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
 
 -- when pasting over a highlight, keeps the original cut text in the register 
 -- instead of replacing with the deleted highlighted text
