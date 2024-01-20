@@ -29,6 +29,9 @@ require('lazy').setup({
   -- Undotree (recommendation from The Primeagen setup)
   'mbbill/undotree',
 
+  -- The Primeagen's VimBeGood tutorial game
+  'theprimeagen/vim-be-good',
+
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {

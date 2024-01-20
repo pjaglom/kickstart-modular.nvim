@@ -27,14 +27,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- [[ The Primeagen Recs - https://github.com/ThePrimeagen/init.lua/ ]]
 -- Remap to open netrw file tree
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = 'Open netrw' })
 
 -- allow you to move text up and down when selected in visual mode
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = 'Move selected text down' })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = 'Move selected text up' })
 
 -- keep cursor in same place when bringing text up with J
-vim.keymap.set("n", "J", "mzJ`z")
+vim.keymap.set("n", "J", "mzJ`z", { desc = 'Bring text up to same line' })
 
 -- keep cursor in middle of screen when scrolling with C-u and C-d
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
