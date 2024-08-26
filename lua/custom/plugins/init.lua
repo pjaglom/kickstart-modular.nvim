@@ -12,5 +12,5 @@ return {
     require('custom.plugins.harpoon'),
 
     -- [[ Undotree ]]
-    require('custom.plugins.undotree')
+    require('custom.plugins.undotree'),
 }
