@@ -52,6 +52,13 @@ require('lazy').setup({
   },
 },
 
+  -- Hardtime
+{
+   "m4xshen/hardtime.nvim",
+   dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+   opts = {}
+},
+
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
