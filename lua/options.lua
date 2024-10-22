@@ -1,6 +1,7 @@
 -- [[ Setting options ]]
--- See `:help vim.o`
+-- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
+--  For more options, you can see `:help option-list`
 
 -- <TAB> mapping option for Copilot. Source: https://github.com/orgs/community/discussions/52918
 vim.g.copilot_assume_mapped = true
@@ -9,16 +10,22 @@ vim.g.copilot_assume_mapped = true
 vim.o.hlsearch = false
 
 -- Make line numbers default
-vim.wo.number = true
-vim.wo.relativenumber = true
+vim.opt.number = true
+vim.opt.relativenumber = true
 
--- Enable mouse mode
-vim.o.mouse = 'a'
+-- Enable mouse mode, can be useful for resizing splits for example!
+vim.opt.mouse = 'a'
+
+-- Don't show the mode, since it's already in the status line
+vim.opt.showmode = false
 
 -- Sync clipboard between OS and Neovim.
+--  Schedule the setting after `UiEnter` because it can increase startup-time.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
--- vim.o.clipboard = 'unnamedplus'
+vim.schedule(function()
+  vim.opt.clipboard = 'unnamedplus'
+end)
 
 -- Set shiftwidth to 4 spaces
 vim.o.shiftwidth = 4
@@ -33,27 +40,43 @@ vim.o.softtabstop = 4
 vim.o.expandtab = true
 
 -- Enable break indent
-vim.o.breakindent = true
+vim.opt.breakindent = true
 
 -- Save undo history
-vim.o.undofile = true
+vim.opt.undofile = true
 
--- Case-insensitive searching UNLESS \C or capital in search
-vim.o.ignorecase = true
-vim.o.smartcase = true
+-- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
-vim.wo.signcolumn = 'yes'
+vim.opt.signcolumn = 'yes'
 
 -- Decrease update time
-vim.o.updatetime = 250
-vim.o.timeoutlen = 300
+vim.opt.updatetime = 250
 
--- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
+-- Decrease mapped sequence wait time
+-- Displays which-key popup sooner
+vim.opt.timeoutlen = 300
 
--- NOTE: You should make sure your terminal supports this
-vim.o.termguicolors = true
+-- Configure how new splits should be opened
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
+-- Sets how neovim will display certain whitespace characters in the editor.
+--  See `:help 'list'`
+--  and `:help 'listchars'`
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
+-- Preview substitutions live, as you type!
+vim.opt.inccommand = 'split'
+
+-- Show which line your cursor is on
+vim.opt.cursorline = true
+
+-- Minimal number of screen lines to keep above and below the cursor.
+vim.opt.scrolloff = 10
 
 -- Prevent bad habits like using arrow keys for movement. Adapted from 
 -- https://missing.csail.mit.edu/2020/editors/
