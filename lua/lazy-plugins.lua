@@ -30,11 +30,7 @@ require('lazy').setup({
   },
 
   -- The Primeagen's "Harpoon"
-  {
-    'ThePrimeagen/harpoon',
-    branch = 'harpoon2',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-  },
+  'theprimeagen/harpoon',
 
   -- Undotree (recommendation from The Primeagen setup)
   'mbbill/undotree',
