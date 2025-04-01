@@ -2,11 +2,11 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
+
+-- Load Custom Options
+require 'custom.options'
+
 return {
-    -- Custom Options
-    require 'custom.plugins.options',
-
-
     -- The Primeagen Recs
     -- [[ Harpoon ]]
     require('custom.plugins.harpoon'),

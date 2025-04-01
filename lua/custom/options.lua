@@ -1,6 +1,7 @@
 -- [[ Custom setting options ]]
--- Primeagen Recs
--- let undotree go back days by saving undos (I think)
+
+-- Primeagen Recommendations
+-- Let undotree save undo history persistently
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
@@ -10,6 +11,8 @@ vim.opt.incsearch = true
 -- Scroll settings
 vim.opt.scrolloff = 8
 
+-- Reduce update time for better responsiveness
 vim.opt.updatetime = 50
 
+-- Highlight the 80th column
 vim.opt.colorcolumn = "80"
