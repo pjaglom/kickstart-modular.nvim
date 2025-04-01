@@ -75,30 +75,30 @@ vim.keymap.set('n', 'N', 'Nzzzv')
 
 -- when pasting over a highlight, keeps the original cut text in the register
 -- instead of replacing with the deleted highlighted text
-vim.keymap.set('x', '<leader>p', [["_dP]])
+vim.keymap.set('x', '<leader>p', [["_dP]], { desc = 'Paste, keeping original text in register' })
 
 -- yank into system clipboard (so can keep them separate but still access)
-vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
-vim.keymap.set('n', '<leader>Y', [["+Y]])
+vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], { desc = 'Yank into system clipboard' })
+vim.keymap.set('n', '<leader>Y', [["+Y]], { desc = 'Yank into system clipboard' })
 
 -- delete to void register (so it isn't available for pasting)
-vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]])
+vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]], { desc = 'Delete to void register' })
 
 -- not sure what 'Q' does, but apparently it's bad, so this disables it
 vim.keymap.set('n', 'Q', '<nop>')
 
 -- not totally sure how to use this one, but allows you to switch projects with
 -- C-f, find new project and open it, then to come back, use C-a, then L
-vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer<CR>')
+vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux new tmux-sessionizer<CR>', { desc = 'Switch projects' })
 
 -- request formatting for the current buffer from the language server associated with the current filetype
-vim.keymap.set('n', '<leader>f', vim.lsp.buf.format)
+vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { desc = 'Request formatting from lsp' })
 
 -- quick fix navigation - allows you to quickly move between lsp/linter-identified errors
-vim.keymap.set('n', '<C-k>', '<cmd>cnext<CR>zz')
-vim.keymap.set('n', '<C-j>', '<cmd>cprev<CR>zz')
-vim.keymap.set('n', '<leader>k', '<cmd>lnext<CR>zz')
-vim.keymap.set('n', '<leader>j', '<cmd>lprev<CR>zz')
+-- vim.keymap.set('n', '<C-k>', '<cmd>cnext<CR>zz', { desc = 'Move to prev entry in quickfix list' })
+-- vim.keymap.set('n', '<C-j>', '<cmd>cprev<CR>zz', { desc = 'Move to prev entry in quickfix list' })
+vim.keymap.set('n', '<leader>k', '<cmd>lnext<CR>zz', { desc = 'Move to next entry in location list' })
+vim.keymap.set('n', '<leader>j', '<cmd>lprev<CR>zz', { desc = 'Move to prev entry in location list' })
 
 -- bring up substitution command to replace current text under cursor with
 -- arbitrary text you input - could be awesome for refactoring names
