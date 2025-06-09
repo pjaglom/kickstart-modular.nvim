@@ -7,10 +7,13 @@
 require 'custom.options'
 
 return {
-    -- The Primeagen Recs
-    -- [[ Harpoon ]]
-    require('custom.plugins.harpoon'),
+  -- The Primeagen Recs
+  -- [[ Harpoon ]]
+  require 'custom.plugins.harpoon',
 
-    -- [[ Undotree ]]
-    require('custom.plugins.undotree')
+  -- [[ Undotree ]]
+  require 'custom.plugins.undotree',
+
+  -- [[ DiffView ]]
+  require 'custom.plugins.diffview',
 }
