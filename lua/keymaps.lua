@@ -107,4 +107,13 @@ vim.keymap.set('n', '<leader>i', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- make current buffer executable (chmod +x)
 vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
 
+-- toggle diffview
+vim.keymap.set('n', '<leader><leader>v', function()
+  if next(require('diffview.lib').views) == nil then
+    vim.cmd 'DiffviewOpen'
+  else
+    vim.cmd 'DiffviewClose'
+  end
+end)
+
 -- vim: ts=2 sts=2 sw=2 et
