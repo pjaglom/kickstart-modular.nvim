@@ -16,4 +16,7 @@ return {
 
   -- [[ DiffView ]]
   require 'custom.plugins.diffview',
+
+  -- [[ Avante ]]
+  require 'custom.plugins.avante',
 }
