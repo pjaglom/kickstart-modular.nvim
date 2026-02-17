@@ -1,4 +1,11 @@
 -- LSP Plugins
+
+-- OS-Agnostic Path Injection (to eliminate jedi errors)
+local path_sep = vim.uv.os_uname().version:find 'Windows' and ';' or ':'
+local mason_bin = vim.fn.stdpath 'data' .. '/mason/bin'
+vim.env.PATH = mason_bin .. path_sep .. vim.env.PATH
+-- End OS-Agnostic Path Injection
+
 return {
   {
     -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
@@ -209,6 +216,8 @@ return {
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         clangd = {},
+        jedi_language_server = {},
+
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},

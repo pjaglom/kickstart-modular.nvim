@@ -15,6 +15,18 @@ return {
       -- for example
       provider = 'gemini',
       providers = {
+        ollama = {
+          endpoint = 'http://127.0.0.1:11434',
+          model = 'qwen3-coder:30b',
+          timeout = 30000, -- 30 seconds
+          extra_request_body = {
+            options = {
+              num_ctx = 16384, -- Increase context window (memory)
+              temperature = 0, -- Closer to 0 is better for coding
+              keep_alive = '20m',
+            },
+          },
+        },
         claude = {
           endpoint = 'https://api.anthropic.com',
           model = 'claude-opus-4-5-20251101',
