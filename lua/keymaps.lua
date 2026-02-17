@@ -116,4 +116,7 @@ vim.keymap.set('n', '<leader><leader>v', function()
   end
 end)
 
+-- Re-mapped 's' to 'ss' due to mini.nvim surround commands
+vim.keymap.set('n', 'ss', 's', { noremap = true, desc = 'Substitute character' })
+
 -- vim: ts=2 sts=2 sw=2 et
